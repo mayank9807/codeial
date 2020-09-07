@@ -20,7 +20,11 @@ app.use(express.static('assets'));
 
 
 //Routes goes here (following RESTFUL Routes Convention)
-app.get('/' , function(req, res){
+app.get("/",function(req,res){
+	res.redirect("/home");
+});
+
+app.get('/home' , function(req, res){
     
     Todo.find({} , function(err , todos){
         if(err){
